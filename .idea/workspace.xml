@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="df7c89e8-7f0c-4dc6-a0f3-068ec0cb7fa5" name="Changes" comment="add register forms">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base/base_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/base_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/main_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/form_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/form_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/form_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_form.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,7 +136,23 @@
       <option name="project" value="LOCAL" />
       <updated>1706032346185</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add register forms">
+      <option name="closed" value="true" />
+      <created>1706210300860</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1706210300860</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add register forms">
+      <option name="closed" value="true" />
+      <created>1706210395391</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706210395391</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

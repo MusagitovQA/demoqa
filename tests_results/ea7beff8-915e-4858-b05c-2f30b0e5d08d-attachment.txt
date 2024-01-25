@@ -1,0 +1,19 @@
+Start test
+Current url https://demoqa.com/automation-practice-form
+Input first name
+Input last name
+Input user email
+Select user gender
+Input user mobile
+Select date birth
+Input subjects
+Select user hobbies
+Click upload pic
+Input curr address
+Select state
+Input state
+Select city
+Input city
+Click button submit
+Good value word
+Finish Test
