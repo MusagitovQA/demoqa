@@ -6,21 +6,17 @@ import allure
 from base.base_class import Base
 
 
-class Main_page(Base):
+class Form_page(Base):
     url = 'https://demoqa.com/automation-practice-form'
-
-    def __init__(self, driver):
-        super().__init__(driver)
-        self.driver = driver
 
     # Locators
 
-    first_name = "//input[@id='firstName']"
-    last_name = "//input[@id='lastName']"
+    first_name = "firstName"
+    last_name = "input[id='lastName']"
     user_email = "//input[@id='userEmail']"
     user_gender = "//label[normalize-space()='Male']"
     user_mobile = "//input[@id='userNumber']"
-    date_birth = "//div[@aria-label='Choose Tuesday, February 8th, 1994']"
+    date_birth = "//input[@id='dateOfBirthInput']"
     subjects = "//input[@id='subjectsInput']"
     user_hobbies = "//label[normalize-space()='Sports']"
     upload_pic = "//input[@id='uploadPicture']"
@@ -30,17 +26,18 @@ class Main_page(Base):
     select_city = "//div[contains(text(),'Select City')]"
     city_input = "//input[@id='react-select-4-input']"
     button_submit = "//button[normalize-space()='Submit']"
+    main_word = "//div[@id='example-modal-sizes-title-lg']"
 
     # Getters
 
     def get_first_name(self):
-        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.first_name)))
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.ID, self.first_name)))  # Поиск First Name на станице с использование селектора ID
 
     def get_last_name(self):
-        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.last_name)))
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.CSS_SELECTOR, self.last_name)))  # Поиск Last Name на станице с использование селектора CSS Selector
 
     def get_user_email(self):
-        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.user_email)))
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.user_email)))  # Поиск User Email на станице с использование селектора XPATH
 
     def get_user_gender(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.user_gender)))
@@ -78,9 +75,12 @@ class Main_page(Base):
     def get_button_submit(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.button_submit)))
 
+    def get_main_word(self):
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.main_word)))
+
     # Actions
 
-    def input_first_name(self, first_name):
+    def input_first_name(self, first_name):                                                # Функции для заполнения форм
         self.get_first_name().send_keys(first_name)
         print("Input first name")
 
@@ -101,8 +101,10 @@ class Main_page(Base):
         print("Input user mobile")
 
     def select_date_birth(self, date_birth):
-        self.get_date_birth().clear()
+        self.get_date_birth().click()
+        self.get_date_birth().send_keys(Keys.CONTROL + "a")
         self.get_date_birth().send_keys(date_birth)
+        self.get_date_birth().send_keys(Keys.RETURN)
         print("Select date birth")
 
     def input_subjects(self, subjects):
@@ -115,8 +117,8 @@ class Main_page(Base):
         print("Select user hobbies")
 
     def click_upload_pic(self):
-        self.get_upload_pic().click()
-        print("Select upload pic")
+        self.get_upload_pic().send_keys("C:\\projectDemo\\upload_file\\test_upload.png")
+        print("Click upload pic")
 
     def input_curr_address(self, curr_address):
         self.get_curr_address().send_keys(curr_address)
@@ -148,18 +150,20 @@ class Main_page(Base):
         self.driver.get(self.url)
         self.driver.fullscreen_window()
         self.get_current_url()
-        self.input_first_name("standard_user")
-        self.input_last_name("secret_sauce")
+        self.input_first_name("Petrovich")
+        self.input_last_name("Petr")
         self.input_user_email("mail@mail.com")
         self.click_user_gender()
         self.input_user_mobile("8999999999")
-        # self.select_date_birth("")
+        self.select_date_birth("08 Feb 1994")
         self.input_subjects("Maths")
         self.click_user_hobbies()
-        # self.click_upload_pic()
+        self.click_upload_pic()
         self.input_curr_address("пр. Нариманова, 1 стр 2, Ульяновск, Ульяновская обл., 432071")
         self.click_select_state()
         self.click_state_input()
         self.click_select_city()
         self.click_city_input()
         self.click_button_submit()
+        self.assert_word(self.get_main_word(), 'Thanks for submitting the form')  # Проверка на заполнении форм
+        self.get_screenshot()

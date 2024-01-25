@@ -3,10 +3,10 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 
-from pages.main_page import Main_page
+from pages.form_page import Form_page
 
 
-def test_form():
+def test_form():  # Настройки Chromedriver
     options = Options()
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
     options = webdriver.ChromeOptions()
@@ -15,11 +15,11 @@ def test_form():
     g = Service()
     driver = webdriver.Chrome(options=options, service=g)
 
-    print("Start test")
+    print("Start test")  # Вывод на экран начало теста
 
-    mp = Main_page(driver)
-    mp.input_form()
+    fp = Form_page(driver)  # Присваиваем класс Form_page переменной fp
+    fp.input_form()  # Вызываем метод из  Form_page
 
-    print("Finish Test")
-    time.sleep(10)
-    driver.quit()
+    print("Finish Test")  # Вывод на экран конец теста
+    time.sleep(10)  # Ожидание 10сек
+    driver.quit()  # Закрываем драйвер
