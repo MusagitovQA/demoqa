@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df7c89e8-7f0c-4dc6-a0f3-068ec0cb7fa5" name="Changes" comment="add register forms">
+    <list default="true" id="df7c89e8-7f0c-4dc6-a0f3-068ec0cb7fa5" name="Changes" comment="add allure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/form_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/form_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_form.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_form.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706210395391</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add allure">
+      <option name="closed" value="true" />
+      <created>1706214092409</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1706214092409</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -181,6 +187,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add base" />
     <MESSAGE value="add register forms" />
-    <option name="LAST_COMMIT_MESSAGE" value="add register forms" />
+    <MESSAGE value="add allure" />
+    <option name="LAST_COMMIT_MESSAGE" value="add allure" />
   </component>
 </project>

@@ -31,13 +31,13 @@ class Form_page(Base):
     # Getters
 
     def get_first_name(self):
-        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.ID, self.first_name)))  # Поиск First Name на станице с использование селектора ID
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.ID, self.first_name)))  # Поиск First Name на странице с использованием селектора ID
 
     def get_last_name(self):
-        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.CSS_SELECTOR, self.last_name)))  # Поиск Last Name на станице с использование селектора CSS Selector
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.CSS_SELECTOR, self.last_name)))  # Поиск Last Name на странице с использованием селектора CSS
 
     def get_user_email(self):
-        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.user_email)))  # Поиск User Email на станице с использование селектора XPATH
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.user_email)))  # Поиск User Email на странице с использованием селектора XPATH
 
     def get_user_gender(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.user_gender)))
@@ -117,7 +117,7 @@ class Form_page(Base):
         print("Select user hobbies")
 
     def click_upload_pic(self):
-        self.get_upload_pic().send_keys("C:\\projectDemo\\upload_file\\test_upload.png")
+        self.get_upload_pic().send_keys("C:\\projectDemo\\upload_file\\test_upload.png")                                # Путь к скриншоту для добавления в форму загрузки
         print("Click upload pic")
 
     def input_curr_address(self, curr_address):
@@ -167,4 +167,4 @@ class Form_page(Base):
             self.click_city_input()
             self.click_button_submit()
             self.assert_word(self.get_main_word(), 'Thanks for submitting the form')  # Проверка на заполнении форм
-            self.get_screenshot()
+            self.get_screenshot()                                                           # Скрин-проверка об успешном прохождении
